@@ -4,7 +4,7 @@ Tracker is a library to track function execution. Primary objective of this JS l
 ## Installation
 
 ```bash
-yarn add @js/tracker
+yarn add easytracker
 ```
 
 ## Usage
@@ -12,7 +12,7 @@ yarn add @js/tracker
 ### import
 
 ```
-import {track, setConfig} from '@js/tracker';
+import {track, setConfig} from 'easytracker';
 ```
 
 ### configuration
