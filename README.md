@@ -66,5 +66,7 @@ It will log in console like
 [Return value]: "this is a dummy return value"
 ```
 
+### Issues
+If you run into decorator not supported issues. Follow this link `https://babeljs.io/docs/en/babel-plugin-proposal-decorators`
 
 
