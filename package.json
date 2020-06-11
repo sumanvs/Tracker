@@ -1,0 +1,37 @@
+{
+  "name": "js_tracker",
+  "version": "1.0.0",
+  "description": "\"A library to track javascript functions and log it\"",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumanvs/Tracker.git"
+  },
+  "keywords": [
+    "track",
+    "function",
+    "function",
+    "tracking",
+    "easy",
+    "loging",
+    "logs",
+    "loging"
+  ],
+  "author": "suman kumar suman",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/sumanvs/Tracker/issues"
+  },
+  "homepage": "https://github.com/sumanvs/Tracker#readme",
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/plugin-proposal-decorators": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "babel-loader": "^8.1.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
