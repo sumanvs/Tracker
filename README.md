@@ -1,4 +1,4 @@
-# JS Tracker
+# JS easytracker
 Tracker is a library to track function execution. Primary objective of this JS library is to track/log the function using decorator syntax which makes it very easy to integrate into project and to analyse the function execution. Currently this library tracks function execution time, parameters and return value. All this is configurable. 
 
 ## Installation
