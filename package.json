@@ -1,5 +1,5 @@
 {
-  "name": "js_tracker",
+  "name": "@js/tracker",
   "version": "1.0.0",
   "description": "\"A library to track javascript functions and log it\"",
   "main": "dist/index.js",
