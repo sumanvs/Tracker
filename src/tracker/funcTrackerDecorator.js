@@ -1,4 +1,4 @@
-import { config } from './config';
+import Tracker from './tracker';
 
 
 /**
@@ -13,14 +13,17 @@ import { config } from './config';
  * @param {*} t1 
  * @param {*} t2 
  */
-function log(configObj, name, identifier, parameters, returnValue, errorDesc, t1, t2, isAsync) {
+function log(configObj, fName, identifier, parameters, returnValue, errorDesc, t1, t2, isAsync) {
 
     let str = `[Tracker] [${new Date()}]`;
-    identifier ? str += `\n[Identifier]: ${identifier}` : null;
+    identifier ? str += `\n[Identifier]: ${identifier}` : null;    
 
-    str += `\n[Name]: ${name}`;
+    str += `\n[Function Name]: ${fName}`;
     str += `\n[Is Async function]: ${isAsync || false}`;
 
+    if (Tracker.getUserData()) {
+        str += `\n[USER]: ${configObj.stringifiedObjects ? JSON.stringify(Tracker.getUserData(), 2) : Tracker.getUserData()}`;
+    }
 
     if (configObj.trackParameters && parameters && parameters.length > 0) {
         str += `\n[Parameters]: ${configObj.stringifiedObjects ? JSON.stringify(parameters, 2) : parameters}`;
@@ -51,6 +54,11 @@ function track(identifier = null, localConfig = {}) {
    
     function trackFunc(target, property, descriptor) {
 
+        // If disabled then DO NOT process
+        if (Tracker.isDisabled()) {
+            return descriptor.value;
+        }
+
         // console.log('desc', descriptor.value.constructor.name);
         // console.log("property", property);
         // console.log("target", target);
@@ -61,7 +69,7 @@ function track(identifier = null, localConfig = {}) {
 
         function decoratorImpl(...funcParams) {
             // console.log(funcParams);
-            const configObj = {...config(), ...localConfig};
+            const configObj = {...(Tracker.getConfig()), ...localConfig};
             const t = Date.now();
 
             // Call the getFullName function on the humanObj object

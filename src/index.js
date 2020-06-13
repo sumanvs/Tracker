@@ -1,5 +1,5 @@
-import track from './tracker/funcTracker';
-import { setConfig } from './tracker/config';
+import track from './tracker/funcTrackerDecorator';
+import Tracker from './tracker/tracker';
 
-export { setConfig };
+export { Tracker };
 export {track, track as default};
